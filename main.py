@@ -10,13 +10,6 @@ app = Flask(
 )
 
 
-@app.route('/favicon.ico')
-def favicon():
-    print(os.path.join(app.root_path))
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.png', mimetype='image/favicon.png')
-
-
 @app.route("/")
 def home():
     return render_template("index.html")
